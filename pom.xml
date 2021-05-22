@@ -11,6 +11,7 @@
     <properties>
         <java.version>1.8</java.version>
         <junit.version>5.7.1</junit.version>
+        <surefire.version>2.12.4</surefire.version>
     </properties>
 
     <dependencies>
@@ -32,6 +33,11 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${surefire.version}</version>
             </plugin>
         </plugins>
     </build>
