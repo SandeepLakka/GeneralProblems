@@ -9,19 +9,16 @@ public class EmployeeFinderWithCriteria {
         ASCENDING,
         DESCENDING
     }
+
     /**
-     * Return list of employee names who matches the @param#minimumSalary.
+     * Return list of employee names who matches the minimum Salary given in input.
      * List returned will be in ascending order fashion
      * @param employees     Employee list
      * @param minimumSalary Condition to match all employees with salary greater than or equal to this
      * @return              List of employee names in ascending order fashion who matches the condition
      */
     public List<String> getEmployees(List<Employee> employees, int minimumSalary){
-        return  employees.stream()
-                .filter(employee -> employee.getSalary() >= minimumSalary)
-                .sorted(Comparator.comparing(Employee::getName))
-                .map(Employee::getName)
-                .collect(Collectors.toList());
+            return getEmployees(employees, minimumSalary, SortingOrder.ASCENDING);
     }
 
 
@@ -30,7 +27,7 @@ public class EmployeeFinderWithCriteria {
      *
      * @param employees     Employee list
      * @param minimumSalary Condition to match all employees with salary greater than or equal to this
-     * @param sortingOrder  Sorting order ( SortingOrder.ASCENDING or SortingOder.DESCENDING )
+     * @param sortingOrder  Sorting order
      * @return              List of employee names in ascending/descending order as per input
      */
     public List<String> getEmployees(List<Employee> employees, int minimumSalary, SortingOrder sortingOrder){
