@@ -8,7 +8,7 @@ jobs:
     steps:
       - run:
           name: Build
-          command: pwd && mvn -X -B "-DskipTests" clean package
+          command: pwd && ls -ltr && mvn -X -B "-DskipTests" clean package
       - run:
           name: Test
           command: mvn -X test
