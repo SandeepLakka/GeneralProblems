@@ -20,6 +20,9 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      - run:
+          name: NotSure
+          command: bash <(curl -s https://codecov.io/bash)
 #      - run:
 #          store_artifacts:
 #            path : target
