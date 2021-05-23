@@ -18,15 +18,12 @@ jobs:
       - run:
           name: Test
           command: mvn test
-      - run:
-          store_artifacts:
-            path : target
 #      - run:
-#          codecov/upload:
-#            file : target/
-      - run:
-          name : Send to CodeCov
-          command : bash <(curl -s https://codecov.io/bash)
+#          store_artifacts:
+#            path : target
+      - codecov/upload:
+          file : target
+
 
 
 workflows:
