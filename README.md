@@ -1,6 +1,7 @@
 # GeneralProblems 
 [![CircleCI](https://circleci.com/gh/SandeepLakka/GeneralProblems/tree/master.svg?style=svg)](https://circleci.com/gh/SandeepLakka/GeneralProblems/tree/master)
 [![codecov](https://codecov.io/gh/SandeepLakka/GeneralProblems/branch/master/graph/badge.svg?token=KVUCZMZMIA)](https://codecov.io/gh/SandeepLakka/GeneralProblems)
+
 This repo is for coding problems meant for mental exercise and also can be used to refresh basic OCA/OCP and algorithms concepts.
 
 #### Need To Know
