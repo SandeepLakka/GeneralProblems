@@ -6,8 +6,6 @@ orbs:
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:
-    environment:
-      - CODECOV_TOKEN = 0ba5cbfb-c75d-4e83-81be-b594366f1166
     docker:
       - image: circleci/openjdk:8
     steps:
@@ -18,20 +16,6 @@ jobs:
       - run:
           name: Test
           command: mvn test
-       - codecov/upload:
-          file : target     
-      # - name : Jest Code Coverage Report
-      #       uses : ziishaned/jest-reporter-action@0.1.1
-
-#      - run:
-#          name: NotSure
-#          command: bash <(curl -s https://codecov.io/bash)
-#      - run:
-#          store_artifacts:
-#            path : target
-
-
-
 
 workflows:
   sample: 
