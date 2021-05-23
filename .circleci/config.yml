@@ -1,7 +1,7 @@
 version: 2.1
 
-#orbs:
-#  codecov: codecov/codecov@1.2.0
+orbs:
+ codecov: codecov/codecov@1.2.0
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
@@ -12,16 +12,16 @@ jobs:
       - image: circleci/openjdk:8
     steps:
       - checkout
-      - codecov/upload:
-          file : target
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
       - run:
           name: Test
           command: mvn test
-      - name : Jest Code Coverage Report
-            uses : ziishaned/jest-reporter-action@0.1.1
+       - codecov/upload:
+          file : target     
+      # - name : Jest Code Coverage Report
+      #       uses : ziishaned/jest-reporter-action@0.1.1
 
 #      - run:
 #          name: NotSure
