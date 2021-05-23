@@ -1,7 +1,7 @@
 version: 2.1
 
-orbs:
-  codecov: codecov/codecov@1.2.0
+#orbs:
+#  codecov: codecov/codecov@1.2.0
 
 jobs:
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
@@ -20,9 +20,12 @@ jobs:
       - run:
           name: Test
           command: mvn test
-      - run:
-          name: NotSure
-          command: bash <(curl -s https://codecov.io/bash)
+      - name : Jest Code Coverage Report
+            uses : ziishaned/jest-reporter-action@0.1.1
+
+#      - run:
+#          name: NotSure
+#          command: bash <(curl -s https://codecov.io/bash)
 #      - run:
 #          store_artifacts:
 #            path : target
