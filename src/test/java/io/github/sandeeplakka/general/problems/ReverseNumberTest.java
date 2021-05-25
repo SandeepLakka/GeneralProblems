@@ -20,9 +20,9 @@ class ReverseNumberTest {
         int tc2 = 12, er2 = 21;
         int tc3 = 1001, er3 = 1001;
 
-        assertEquals(er1, reverseNumber.getReversedNumber(tc1));
-        assertEquals(er2, reverseNumber.getReversedNumber(tc2));
-        assertEquals(er3, reverseNumber.getReversedNumber(tc3));
+        assertEquals(er1, reverseIt.apply(tc1));
+        assertEquals(er2, reverseIt.apply(tc2));
+        assertEquals(er3, reverseIt.apply(tc3));
 
     }
 
