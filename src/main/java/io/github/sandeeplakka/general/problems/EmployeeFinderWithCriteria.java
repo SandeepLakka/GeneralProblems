@@ -10,6 +10,20 @@ public class EmployeeFinderWithCriteria {
         DESCENDING
     }
 
+    private static final EmployeeFinderWithCriteria self = new EmployeeFinderWithCriteria();
+
+    public static void main(String[] args) {
+
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(new Employee("EmployeeWith30K",30_000,22));
+        employeeList.add(new Employee("EmployeeWith35K",35_000,24));
+        employeeList.add(new Employee("EmployeeWith100K",100_000,30));
+
+        System.out.println("Employees with salary greater than or " +
+                "equal to 35K are : "+self.getEmployees(employeeList,35_000));
+
+    }
+
     /**
      * Return list of employee names who matches the minimum Salary given in input.
      * List returned will be in ascending order fashion

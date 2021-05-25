@@ -11,6 +11,17 @@ public class OccurencesOfEachCharInString {
         return t.negate();
     }
 
+    private final static OccurencesOfEachCharInString self = new OccurencesOfEachCharInString();
+    public static void main(String[] args) {
+
+        String input = self.getClass().getSimpleName();
+        System.out.println("characters count in "+input+" is : "+self.getCountOfOccurences(input));
+
+        input = "hello bye";
+        System.out.println("characters count in "+input+" is : "+self.getCountOfOccurences(input));
+
+    }
+
     /**
      * Returns the number of occurences of each distinct character in a given string
      * @param input Input String
