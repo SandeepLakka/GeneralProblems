@@ -1,5 +1,6 @@
 package io.github.sandeeplakka.general.problems;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -9,9 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ReverseNumberTest {
 
-    static final ReverseNumber reverseNumber = new ReverseNumber();
+    private ReverseNumber reverseNumber;
 
     Function<Integer, Integer> reverseIt = number -> reverseNumber.getReversedNumber(number);
+
+    @BeforeEach
+    public void init(){
+        reverseNumber = new ReverseNumber();
+    }
 
     @Test
     @DisplayName("Test Positive Numbers")
