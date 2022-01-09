@@ -1,6 +1,5 @@
 package io.github.sandeeplakka.general.problems.arrays;
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
