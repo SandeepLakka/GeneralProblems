@@ -32,7 +32,8 @@ public class PoC {
 
     public static int getLongitude(final String place) {
 
-        final String API_URL = String.format("https://nominatim.openstreetmap.org/search.php?q=%s&limit=1&format=jsonv2", place);
+        final String API_URL = String.format("https://nominatim.openstreetmap.org/search.php?" +
+                "q=%s&limit=1&format=jsonv2", place);
         Map<String, String> myMap = null;
 
         try {
