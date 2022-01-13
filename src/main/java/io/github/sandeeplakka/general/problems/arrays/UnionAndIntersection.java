@@ -8,7 +8,7 @@ public class UnionAndIntersection {
 
     private static void showCaseSamples(int[] a, int[] b, int[] union, int[] intersection) {
         UnionAndIntersection thisObj = new UnionAndIntersection();
-        System.out.println(String.format("Arrays are following :\na : %s\nb : %s",
+        System.out.println(String.format("Arrays are following :%na : %s%nb : %s",
                 Arrays.toString(a), Arrays.toString(b)));
         System.out.println("Union is : " + Arrays.toString(
                 thisObj.findUnionOrIntersection(a, b, TYPE.UNION)) + " : Validation passed ? "
