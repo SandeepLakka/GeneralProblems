@@ -3,14 +3,16 @@ version: 2.1
 orbs:
   codecov: codecov/codecov@3.0.0
 
+environment:
+  token: 'CODECOV_TOKEN(0ba5cbfb-c75d-4e83-81be-b594366f1166)'
 jobs:
   example-job:
     docker:
       # replace with your preferred image
       - image: cimg/base:stable
     steps:
-      - codecov/upload:
-          token: 0ba5cbfb-c75d-4e83-81be-b594366f1166 
+      - codecov/upload
+          # token: 0ba5cbfb-c75d-4e83-81be-b594366f1166 
 
 workflows:
   example-workflow:
