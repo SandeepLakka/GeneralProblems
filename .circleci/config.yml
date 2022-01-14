@@ -1,25 +1,38 @@
 version: 2.1
 
 orbs:
- codecov: codecov/codecov@1.2.0
+  codecov: codecov/codecov@3.0.0
 
 jobs:
-  # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
-  build-and-test:
-    environment:
-      - CODECOV_TOKEN:'0ba5cbfb-c75d-4e83-81be-b594366f1166'
+  example-job:
     docker:
-      - image: circleci/openjdk:8
+      # replace with your preferred image
+      - image: cimg/base:stable
     steps:
-      - checkout
-      - run:
-          name: Build
-          command: mvn -B -DskipTests clean package
-      - run:
-          name: Test
-          command: mvn test
+      - codecov/upload:
+          token: 0ba5cbfb-c75d-4e83-81be-b594366f1166 
 
 workflows:
-  sample: 
+  example-workflow:
     jobs:
-      - build-and-test
+      - example-job
+# jobs:
+#   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
+#   build-and-test:
+#     environment:
+#       - CODECOV_TOKEN:'0ba5cbfb-c75d-4e83-81be-b594366f1166'
+#     docker:
+#       - image: circleci/openjdk:8
+#     steps:
+#       - checkout
+#       - run:
+#           name: Build
+#           command: mvn -B -DskipTests clean package
+#       - run:
+#           name: Test
+#           command: mvn test
+
+# workflows:
+#   sample: 
+#     jobs:
+#       - build-and-test
