@@ -9,8 +9,15 @@ jobs:
   example-job:
     docker:
       # replace with your preferred image
-      - image: cimg/base:stable
+      - image: circleci/openjdk:8 
     steps:
+      - checkout
+      - run:
+          name: Build
+          command: mvn -B -DskipTests clean package
+      - run:
+          name: Test
+          command: mvn test
       - codecov/upload
           # token: 0ba5cbfb-c75d-4e83-81be-b594366f1166 
 
