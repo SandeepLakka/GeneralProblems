@@ -59,8 +59,8 @@
                     </formats>
                     <check />
                 </configuration>
-            </plugin>-->
-<!--             <plugin>
+            </plugin>
+             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
@@ -84,12 +84,12 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
-<!--                        <configuration>
+                        <configuration>
                             &lt;!&ndash; Sets the path to the file which contains the execution data. &ndash;&gt;
                             &lt;!&ndash;<dataFile>target/jacoco.exec</dataFile>&ndash;&gt;
                             &lt;!&ndash; Sets the output directory for the code coverage report. &ndash;&gt;
                             &lt;!&ndash;<outputDirectory>target/my-reports</outputDirectory>&ndash;&gt;
-                        </configuration>-- >
+                        </configuration>
                     </execution>
                 </executions>
                 <configuration>
