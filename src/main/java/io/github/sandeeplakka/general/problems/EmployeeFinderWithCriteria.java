@@ -79,8 +79,4 @@ class Employee {
         return salary;
     }
 
-    public int getAge() {
-        return age;
-    }
-
 }
