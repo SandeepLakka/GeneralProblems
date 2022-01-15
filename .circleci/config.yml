@@ -9,7 +9,7 @@ jobs:
   example-job:
     docker:
       # replace with your preferred image
-      - image: circleci/openjdk:8 
+      - image: circleci/openjdk:8
     steps:
       - checkout
       - run:
@@ -19,7 +19,7 @@ jobs:
           name: Test
           command: mvn test
       - codecov/upload
-          # token: 0ba5cbfb-c75d-4e83-81be-b594366f1166 
+          # token: 0ba5cbfb-c75d-4e83-81be-b594366f1166
 
 workflows:
   example-workflow:
@@ -42,7 +42,7 @@ workflows:
 #           command: mvn test
 
 # workflows:
-#   sample: 
+#   sample:
 #     jobs:
 #       - build-and-test
 
