@@ -140,6 +140,11 @@ class MaxHourGlassSumTest {
                 () -> maxHourGlassSum.getMaxHourGlassSum(null));
         assertThrows(IllegalArgumentException.class,
                 () -> maxHourGlassSum.getMaxHourGlassSum(new LinkedList<>()));
+        List<List<Integer>> input = new ArrayList<>();
+        input.add(new ArrayList<>());
+        input.add(null);
+        assertThrows(IllegalArgumentException.class,
+                () -> maxHourGlassSum.getMaxHourGlassSum(input));
     }
 
 

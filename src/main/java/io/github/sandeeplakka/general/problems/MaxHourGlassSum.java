@@ -23,7 +23,7 @@ public class MaxHourGlassSum {
      * @return maximum hour glass sum in the input
      */
     public int getMaxHourGlassSum(List<List<Integer>> list) {
-        if (list == null || list.stream().filter(Objects::isNull).findAny().isPresent()) {
+        if (list == null || list.stream().anyMatch(Objects::isNull)) {
             throw new IllegalArgumentException("Input list contents must not be null");
         }
         if (list.size() == 0 || list.stream().anyMatch(List::isEmpty)) {
@@ -56,8 +56,9 @@ public class MaxHourGlassSum {
             for (int point : row) {
                 sb.append(String.format("%s ", point));
             }
-            System.out.println(sb.toString());
+            System.out.println(sb);
         }
         System.out.println();
     }
+
 }
