@@ -5,6 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -130,6 +131,15 @@ class MaxHourGlassSumTest {
         }});
 
         assertEquals(0, maxHourGlassSum.getMaxHourGlassSum(input));
+    }
+
+    @Test
+    @DisplayName("Test edge cases")
+    public void testEdgeCases() {
+        assertThrows(IllegalArgumentException.class,
+                () -> maxHourGlassSum.getMaxHourGlassSum(null));
+        assertThrows(IllegalArgumentException.class,
+                () -> maxHourGlassSum.getMaxHourGlassSum(new LinkedList<>()));
     }
 
 
