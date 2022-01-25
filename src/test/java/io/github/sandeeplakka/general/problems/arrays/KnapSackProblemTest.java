@@ -23,5 +23,11 @@ class KnapSackProblemTest {
         int W = 50;
         int n = val.length;
         assertEquals(220, thisObj.knapSackBasicRecursive(wt, val, W, n));
+
+        val = new int[]{92, 57, 49, 68, 60, 43, 67, 84, 87, 72, 200};
+        wt = new int[]{23, 31, 29, 44, 53, 38, 63, 85, 89, 82, 200};
+        W = 165;
+        n = val.length;
+        assertEquals(309, thisObj.knapSackBasicRecursive(wt, val, W, n));
     }
 }
