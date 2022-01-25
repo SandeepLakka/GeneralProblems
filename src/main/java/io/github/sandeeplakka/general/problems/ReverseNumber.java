@@ -5,18 +5,19 @@ import java.util.Arrays;
 public class ReverseNumber {
 
 
-    private static final ReverseNumber self = new ReverseNumber();
-
-    public static void main(String[] args) {
-        int[] numbers = {123456, -980, 24608};
-        Arrays.stream(numbers).boxed().forEach(number ->
-                System.out.println("Number " + number
-                        + " reversed becomes : "
-                        + self.getReversedNumber(number))
-        );
-    }
+//    private static final ReverseNumber self = new ReverseNumber();
+//
+//    public static void main(String[] args) {
+//        int[] numbers = {123456, -980, 24608};
+//        Arrays.stream(numbers).boxed().forEach(number ->
+//                System.out.println("Number " + number
+//                        + " reversed becomes : "
+//                        + self.getReversedNumber(number))
+//        );
+//    }
 
     // This implementation is done without using any libraries
+
     /**
      * Return number with all digits positions reversed.
      * e.g: (-)123 will be converted to (-)321

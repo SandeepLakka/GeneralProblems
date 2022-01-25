@@ -36,7 +36,7 @@ class FindNonRepeatingNumber1Test {
     void testsExceptionals() {
         assertThrows(IllegalArgumentException.class,
                 () -> findNonRepeatingNumber1.getNonRepeatingNumber(null));
-
+        assertEquals(Integer.MIN_VALUE, findNonRepeatingNumber1.getNonRepeatingNumber(new int[]{}));
 
     }
 }
