@@ -5,14 +5,10 @@ import io.github.sandeeplakka.general.problems.exception.NYI;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalTime;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class PoC {
 
@@ -63,6 +59,7 @@ public class PoC {
 
             byte[] output;
             String outputStr = br.readLine().substring(1);
+            br.close();
             outputStr = outputStr.substring(0, outputStr.length() - 1);
             output = outputStr.getBytes(StandardCharsets.UTF_8);
             ObjectMapper mapper = new ObjectMapper();

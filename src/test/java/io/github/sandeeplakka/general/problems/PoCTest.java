@@ -1,14 +1,11 @@
 package io.github.sandeeplakka.general.problems;
 
+import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import io.github.sandeeplakka.general.problems.exception.NYI;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -24,5 +21,15 @@ class PoCTest {
     void getLongitude() {
         assertThrows(NYI.class, () ->
                 thisObj.getAdjustedTime("Hyderabad"));
+    }
+
+    @Test
+    void testExceptionals() {
+        assertThrows(RuntimeException.class,
+                () -> thisObj.getAdjustedTime("null&json_callback=\"\""));
+
+        assertThrows(AssertionError.class,
+                () -> thisObj.getAdjustedTime("json_callback=\"\""));
+
     }
 }
