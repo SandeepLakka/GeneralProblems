@@ -29,6 +29,13 @@ class KnapSackProblemTest {
         W = 165;
         n = val.length;
         assertEquals(309, thisObj.knapSackBasicRecursive(wt, val, W, n));
+
+        val = new int[]{};
+        wt = new int[]{};
+        W = 0;
+        n = val.length;
+        assertEquals(0, thisObj.knapSackRecurMemoized(wt, val, W, n));
+
     }
 
     @Test
@@ -44,5 +51,12 @@ class KnapSackProblemTest {
         W = 165;
         n = val.length;
         assertEquals(309, thisObj.knapSackRecurMemoized(wt, val, W, n));
+
+        val = new int[]{};
+        wt = new int[]{};
+        W = 0;
+        n = val.length;
+        assertEquals(0, thisObj.knapSackRecurMemoized(wt, val, W, n));
+
     }
 }

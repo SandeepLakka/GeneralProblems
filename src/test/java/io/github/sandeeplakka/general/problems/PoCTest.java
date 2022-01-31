@@ -1,11 +1,9 @@
 package io.github.sandeeplakka.general.problems;
 
-import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import io.github.sandeeplakka.general.problems.exception.NYI;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,6 +28,11 @@ class PoCTest {
 
         assertThrows(AssertionError.class,
                 () -> thisObj.getAdjustedTime("json_callback=\"\""));
+    }
 
+    @Test
+    void testGetLongitude() {
+        assertEquals(78, thisObj.getLongitude("Hyderabad"));
+        assertEquals(88, thisObj.getLongitude("Kolkata"));
     }
 }
