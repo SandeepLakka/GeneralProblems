@@ -29,20 +29,8 @@ Constraints:
  */
 public class FindDuplicateNumber {
 
-    public static void main(String[] args) {
-        int[] nums = new int[]{1, 3, 4, 2, 2};
-        System.out.println(getDuplicate(nums));
-        System.out.println(getDuplicateWithSet(nums));
-
-
-        nums = new int[]{3, 1, 3, 4, 2};
-        System.out.println(getDuplicate(nums));
-        System.out.println(getDuplicateWithSet(nums));
-
-    }
-
     //Naive way using O(N) space with linear time complexity
-    public static int getDuplicate(int[] nums) {
+    public int getDuplicate(int[] nums) {
         boolean[] isVisited = new boolean[nums.length];
         for (int val : nums) {
             if (isVisited[val]) return val;
@@ -51,7 +39,7 @@ public class FindDuplicateNumber {
         return -1;
     }
 
-    public static int getDuplicateWithSet(int[] nums) {
+    public int getDuplicateWithSet(int[] nums) {
         Set<Integer> visited = new HashSet<>();
         for (int val : nums) {
             if (visited.contains(val)) return val;
