@@ -6,10 +6,7 @@ import java.util.Random;
 public class OnDemandSingleton {
     private static OnDemandSingleton singleton;
 
-    private int randomValue;
-
     private OnDemandSingleton() {
-        randomValue = new Random().nextInt();
     }
 
     public static OnDemandSingleton getInstance() {
@@ -17,10 +14,6 @@ public class OnDemandSingleton {
             singleton = new OnDemandSingleton();
         }
         return singleton;
-    }
-
-    public int getRandomValue() {
-        return this.randomValue;
     }
 
 }

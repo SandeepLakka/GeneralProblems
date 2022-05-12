@@ -9,15 +9,23 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Driver {
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-    public static void main(String[] args) {
-        Supplier<OnDemandSingleton> onDemandSingletonSupplier = OnDemandSingleton::getInstance;
-        testNormally(onDemandSingletonSupplier);
-        testParallelly(onDemandSingletonSupplier);
+public class SingletonTest {
+
+    static <T> void testNormally(Supplier<T> supplier) {
+        String cut = supplier.get().getClass().getSimpleName();
+        List<T> list = new ArrayList<>();
+        boolean isPassed;
+        list.add(supplier.get());
+        list.add(supplier.get());
+        list.add(supplier.get());
+        isPassed = getResult(list);
+        printResults("Normal Testing", cut, isPassed);
+        assertTrue(isPassed);
     }
 
-    public static <T> void testParallelly(Supplier<T> supplier) {
+    static <T> void testParallelly(Supplier<T> supplier) {
 
         String cut = supplier.get().getClass().getSimpleName();
         try {
@@ -34,17 +42,6 @@ public class Driver {
         boolean isPassed = getResult(list);
         printResults("Parallel Testing", cut, isPassed);
 
-    }
-
-    public static <T> void testNormally(Supplier<T> supplier) {
-        String cut = supplier.get().getClass().getSimpleName();
-        List<T> list = new ArrayList<>();
-        boolean isPassed;
-        list.add(supplier.get());
-        list.add(supplier.get());
-        list.add(supplier.get());
-        isPassed = getResult(list);
-        printResults("Normal Testing", cut, isPassed);
     }
 
     private static <T> boolean getResult(List<T> list) {
