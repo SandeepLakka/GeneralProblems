@@ -1,7 +1,5 @@
 package io.github.sandeeplakka.general.problems.pattern.singleton;
 
-import java.util.Objects;
-import java.util.Random;
 
 public class OnDemandSingleton {
     private static OnDemandSingleton singleton;

@@ -4,18 +4,17 @@ public class SingletonPatternV01 {
     private static final SingletonPatternV01 instance = new SingletonPatternV01();
     private static int val;
 
+    public static int getVal() {
+        return val;
+    }
+
+    public static SingletonPatternV01 getInstance() {
+        return instance;
+    }
+
     private SingletonPatternV01() {
         val++;
     }
 
-    public void printValue() {
-        System.out.println(val);
-    }
-
-    public static void main(String[] args) {
-        SingletonPatternV01.instance.printValue();
-        System.out.println("--");
-        SingletonPatternV01.instance.printValue();
-    }
 
 }
